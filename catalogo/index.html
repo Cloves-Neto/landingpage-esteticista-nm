@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Serviços | NM Estética Avançada</title>
+    <meta name="description" content="Explore o catálogo completo de tratamentos estéticos faciais, corporais e capilares no Studio NM. Cuidado personalizado sob medida para você.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Catálogo de Serviços | NM Estética Avançada">
+    <meta property="og:description" content="Nossos tratamentos e protocolos em São Bernardo do Campo.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ionicons Icon Library -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        :root {
+            --bg-creme: #FAF6F0;
+            --bg-champagne: #F5EFE6;
+            --bg-dark: #231815;
+            --bg-card-dark: #2F211C;
+            --text-dark: #231815;
+            --text-muted: #5C4E48;
+            --text-light: #F4EFEA;
+            --accent-gold: #C5A376;
+            --accent-gold-hover: #B08D60;
+            --line-color: #E8DFD3;
+            --white: #FFFFFF;
+            
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Montserrat', sans-serif;
+            
+            --radius-lg: 32px;
+            --radius-md: 20px;
+            --radius-full: 9999px;
+            --shadow-premium: 0 12px 40px rgba(35, 24, 21, 0.03);
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-creme);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 246, 240, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: var(--text-dark);
+            background-color: transparent;
+            border: 1px solid var(--line-color);
+            padding: 10px 20px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-back:hover {
+            border-color: var(--accent-gold);
+            background-color: rgba(197, 163, 118, 0.04);
+            color: var(--accent-gold);
+        }
+
+        /* CATALOG HERO */
+        .catalog-hero {
+            padding: 80px 24px 40px;
+            text-align: center;
+            background-color: var(--bg-champagne);
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        .catalog-hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.4rem, 5vw, 3.5rem);
+            color: var(--text-dark);
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .catalog-hero p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* FILTER BUTTONS */
+        .filter-container {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 0 24px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--white);
+            border: 1px solid var(--line-color);
+            color: var(--text-muted);
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--text-dark);
+            color: var(--white);
+            border-color: var(--text-dark);
+            transform: translateY(-1px);
+        }
+
+        /* SERVICES GRID (List style) */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .catalog-section-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-weight: 400;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 12px;
+        }
+
+        .catalog-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border: 1px solid var(--line-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            transition: var(--transition);
+            box-shadow: var(--shadow-premium);
+            min-height: 220px;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        .card-image-left {
+            width: 260px;
+            min-width: 260px;
+            background-size: cover;
+            background-position: center;
+            border-right: 1px solid var(--line-color);
+            position: relative;
+        }
+
+        .card-main-content {
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .card-category-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .service-card .duration {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .service-card .duration ion-icon {
+            color: var(--accent-gold);
+        }
+
+        .service-card .short-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        /* Card Action Buttons */
+        .card-actions {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            border-top: 1px solid var(--line-color);
+            padding-top: 16px;
+            margin-top: auto;
+        }
+
+        .btn-details-toggle {
+            background: none;
+            border: none;
+            color: var(--accent-gold);
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-details-toggle:hover {
+            color: var(--text-dark);
+        }
+
+        .btn-book {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-book:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-1px);
+        }
+
+        /* MODAL OVERLAY */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(35, 24, 21, 0.5);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            padding: 20px;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            border: 1px solid var(--line-color);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 580px;
+            padding: 48px;
+            box-shadow: 0 20px 50px rgba(35, 24, 21, 0.12);
+            position: relative;
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--accent-gold);
+        }
+
+        #modalBody h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            font-weight: 400;
+            margin-bottom: 8px;
+            line-height: 1.15;
+        }
+
+        .modal-duration {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 16px;
+            width: 100%;
+        }
+
+        .modal-detail-item {
+            margin-bottom: 20px;
+        }
+
+        .modal-detail-item strong {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .modal-detail-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .modal-action-wrapper {
+            margin-top: 36px;
+            border-top: 1px solid var(--line-color);
+            padding-top: 24px;
+        }
+
+        .btn-book-modal {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-decoration: none;
+            padding: 16px 28px;
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        .btn-book-modal:hover {
+            background-color: var(--accent-gold);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 991px) {
+            .card-image-left {
+                width: 200px;
+                min-width: 200px;
+            }
+            .card-main-content {
+                padding: 24px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .catalog-hero, .catalog-container {
+                padding: 60px 16px !important;
+            }
+
+            .service-card {
+                flex-direction: column;
+            }
+
+            .card-image-left {
+                width: 100%;
+                min-width: 100%;
+                height: 180px;
+                border-right: none;
+                border-bottom: 1px solid var(--line-color);
+            }
+
+            .card-main-content {
+                padding: 24px;
+            }
+
+            .service-card:hover {
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .modal-content {
+                padding: 30px 24px;
+            }
+            #modalBody h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">NM</a>
+            <a href="../index.html" class="btn-back">
+                Ver Site
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+        </div>
+    </header>
+
+    <!-- CATALOG HERO -->
+    <section class="catalog-hero">
+        <h1>Nosso Catálogo de Serviços</h1>
+        <p>Uma seleção completa de tratamentos corporais, faciais e capilares focados na harmonia, saúde e no resgate da sua autoestima.</p>
+    </section>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterCatalog('todos')">Todos</button>
+        <button class="filter-btn" onclick="filterCatalog('facial')">Faciais</button>
+        <button class="filter-btn" onclick="filterCatalog('corporal')">Corporais</button>
+        <button class="filter-btn" onclick="filterCatalog('capilar')">Capilar</button>
+    </div>
+
+    <!-- CATALOG CONTAINER -->
+    <main class="catalog-container">
+        <!-- FACIAIS -->
+        <div class="category-block" data-block-category="facial">
+            <h2 class="catalog-section-title">Tratamentos Faciais</h2>
+            <div class="catalog-grid">
+                
+                <!-- facial 1 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Limpeza de Pele Convencional</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Remoção completa de impurezas, cravos, miliuns e células mortas, restabelecendo a saúde e o viço natural do rosto.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Limpeza de Pele Convencional', '60 min', 'Higienização e purificação para todos os tipos de pele.', 'Evitar exposição solar direta nas primeiras 24h e utilizar protetor solar rigorosamente.', 'Pode ocorrer leve vermelhidão temporária na região facial.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20a%20Limpeza%20de%20Pele%20Convencional." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 2 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Limpeza de Pele com Peeling Químico</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Higienização profunda associada à aplicação de ácidos específicos para acelerar a renovação e melhorar a textura.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Limpeza de Pele com Peeling Químico', '60 min', 'Renovação da pele, melhora na textura geral, rugas finas e luminosidade.', 'Uso rigoroso de protetor solar e hidratação profunda recomendada.', 'Pode ocorrer descamação leve nos dias seguintes ao procedimento.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20a%20Limpeza%20de%20Pele%20com%20Peeling%20Qu%C3%ADmico." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 3 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Limpeza de Pele com Peeling de Diamante</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Higienização mecânica que remove suavemente a camada superficial da pele, clareando manchas leves.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Limpeza de Pele com Peeling de Diamante', '60 min', 'Renovação celular física e melhora significativa da textura cutânea.', 'Foco em hidratação e proteção solar ativa após o procedimento.', 'Procedimento totalmente não invasivo e indolor.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20a%20Limpeza%20de%20Pele%20com%20Peeling%20de%20Diamante." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 4 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Dermaplaning</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Esfoliação mecânica superficial com lâmina cirúrgica para a remoção completa de lanugem facial e células mortas.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Dermaplaning', '60 min', 'Pele opaca, remoção de células mortas e pelos finos faciais.', 'Usar protetor solar e evitar ácidos ou esfoliações por alguns dias.', 'Promove um aspecto imediatamente mais iluminado, uniforme e aveludado.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20Dermaplaning." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 5 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Hydragloss</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Tratamento super hidratante e revitalizante labial que suaviza linhas e devolve o viço natural aos lábios.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Hydragloss', '60 min', 'Lábios ressecados, sem brilho ou com linhas finas aparentes.', 'Manter os lábios hidratados com bálsamo ou protetor específico.', 'Procedimento indolor e não invasivo.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20Hydragloss." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 6 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Jato de Plasma</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Tecnologia avançada que estimula o colágeno e trata a flacidez e rugas finas da pele através de plasma.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Jato de Plasma', '60 min', 'Flacidez tecidual, rugas finas e remoção de pequenas lesões benignas.', 'Não remover as crostas formadas de forma mecânica e evitar exposição solar direta.', 'Procedimento de alta performance que necessita de avaliação prévia.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20Jato%20de%20Plasma." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 7 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Remoção de Acrocórdons / Verrugas</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Procedimento focado na remoção segura e estética de pequenas lesões benignas na pele.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Remoção de Acrocórdons / Verrugas', '60 min', 'Remoção de acrocórdons e verrugas benignas na face ou corpo.', 'Higienização cuidadosa no local e aplicação rigorosa de proteção solar.', 'Necessita avaliação prévia para confirmação da natureza da lesão.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20a%20Remo%C3%A7%C3%A3o%20de%20Acroc%C3%B3rdons." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 8 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Microagulhamento Facial</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Indução percutânea de colágeno através de microagulhas, excelente para cicatrizes e linhas finas.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Microagulhamento Facial', '60 min', 'Cicatrizes de acne, rugas superficiais, linhas de expressão e rejuvenescimento global.', 'Uso rigoroso de protetor solar. Evitar calor e atividades físicas nas primeiras 24h.', 'O número ideal de sessões varia conforme a avaliação do objetivo do paciente.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20Microagulhamento%20Facial." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 9 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Toxina Botulínica (Botox)</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Aplicação para relaxamento muscular temporário, suavizando linhas e marcas de expressão dinâmicas.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Toxina Botulínica (Botox)', '60 min', 'Prevenção e suavização de rugas dinâmicas e linhas de expressão da face.', 'Evitar massagear a região e não realizar atividades físicas intensas por 24h.', 'Necessita avaliação detalhada e agendamento prévio.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20Botox." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 10 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Bioestimulador de Colágeno</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Substâncias injetáveis que ativam a produção natural de colágeno do corpo, melhorando a sustentação.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Bioestimulador de Colágeno', '60 min', 'Tratamento da flacidez facial e redefinição do contorno do rosto.', 'Seguir à risca as orientações de massagens recomendadas pós-procedimento.', 'Resultados progressivos e de alta elegância e naturalidade.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20Bioestimulador%20de%20Col%C3%A1geno." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- facial 11 -->
+                <div class="service-card" data-category="facial">
+                    <div class="card-image-left" style="background-image: url('../assets/facial_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Facial</span>
+                        <h3>Radiofrequência Facial</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Uso de ondas eletromagnéticas para aquecer as camadas profundas, contraindo o colágeno e tratando flacidez.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Radiofrequência Facial', '60 min', 'Flacidez cutânea leve a moderada e linhas finas de expressão.', 'Manter hidratação ativa e aplicação frequente de proteção solar.', 'Tratamento totalmente indolor e não invasivo.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20a%20Radiofrequ%C3%AAncia%20Facial." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CORPORAIS -->
+        <div class="category-block" data-block-category="corporal">
+            <h2 class="catalog-section-title">Tratamentos Corporais</h2>
+            <div class="catalog-grid">
+                
+                <!-- corporal 1 -->
+                <div class="service-card" data-category="corporal">
+                    <div class="card-image-left" style="background-image: url('../assets/corporal_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Corporal</span>
+                        <h3>Protocolo Regenera (Estrias)</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Tratamento focado na reestruturação tecidual para melhorar a aparência e relevo de estrias brancas e vermelhas.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Protocolo Regenera (Estrias)', '60 min', 'Melhora do aspecto estético e relevo das estrias corporais.', 'Seguir orientações de cosméticos regeneradores e manter alta hidratação.', 'O número ideal de sessões varia conforme a avaliação da pele do cliente.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20Protocolo%20Regenera%20Estrias." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- corporal 2 -->
+                <div class="service-card" data-category="corporal">
+                    <div class="card-image-left" style="background-image: url('../assets/corporal_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Corporal</span>
+                        <h3>Drenagem Linfática</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Massagem manual de toque suave focada em estimular o sistema linfático, reduzindo o inchaço e toxinas.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Drenagem Linfática', '60 min', 'Redução da retenção de líquidos corporais e sensação de bem-estar.', 'Aumentar a ingestão de água após a realização do procedimento.', 'Técnica 100% manual e muito relaxante.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20Drenagem%20Linf%C3%A1tica." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- corporal 3 -->
+                <div class="service-card" data-category="corporal">
+                    <div class="card-image-left" style="background-image: url('../assets/corporal_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Corporal</span>
+                        <h3>Drenagem Pós-Operatória</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Massagem específica e muito delicada para auxiliar na recuperação tecidual pós cirurgias plásticas.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Drenagem Pós-Operatória', '60 min', 'Redução de fibrose, edemas e auxílio na recuperação pós-cirúrgica.', 'Seguir rigorosamente todas as recomendações e prazos médicos do cirurgião.', 'Realizada mediante carta de liberação ou autorização expressa do médico.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20a%20Drenagem%20P%C3%B3s-Operat%C3%B3ria." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- corporal 4 -->
+                <div class="service-card" data-category="corporal">
+                    <div class="card-image-left" style="background-image: url('../assets/corporal_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Corporal</span>
+                        <h3>Drenagem Método Detox</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 120 min (2h)</span>
+                        <p class="short-desc">Protocolo intensivo de manobras de drenagem manual para desintoxicação corporal e redução rápida de medidas.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Drenagem Método Detox', '120 min (2h)', 'Retenção severa de líquidos, sensação de peso corporal e redução de medidas temporárias.', 'Excelente hidratação antes e após a realização do procedimento.', 'Manobras vigorosas e específicas para otimização dos resultados drenantes.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20Drenagem%20M%C3%A9todo%20Detox." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- corporal 5 -->
+                <div class="service-card" data-category="corporal">
+                    <div class="card-image-left" style="background-image: url('../assets/corporal_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Corporal</span>
+                        <h3>Tratamento para Lipedema</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 a 90 min</span>
+                        <p class="short-desc">Protocolo especial para aliviar dores, inchaço e peso nas pernas causados pelo lipedema.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Tratamento para Lipedema', '60 a 90 min', 'Controle e alívio dos sintomas físicos do lipedema nos membros inferiores.', 'Adoção de plano terapêutico individualizado.', 'Inclui o uso de botas pneumáticas de compressão sequencial na clínica.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20para%20Tratamento%20de%20Lipedema." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- corporal 6 -->
+                <div class="service-card" data-category="corporal">
+                    <div class="card-image-left" style="background-image: url('../assets/corporal_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Corporal</span>
+                        <h3>Tratamento para Flacidez</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Protocolos combinados focados na melhora da firmeza e elasticidade da pele corporal.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Tratamento para Flacidez', '60 min', 'Flacidez de pele localizada em regiões como abdômen, coxas e braços.', 'Uso de cosméticos indicados na consulta e alta hidratação corporal.', 'Tratamento montado em sessões personalizadas conforme a avaliação inicial.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20Tratamento%20para%20Flacidez%20Corporal." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- corporal 7 -->
+                <div class="service-card" data-category="corporal">
+                    <div class="card-image-left" style="background-image: url('../assets/corporal_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Corporal</span>
+                        <h3>Tratamento para Celulite</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 60 min</span>
+                        <p class="short-desc">Manobras manuais e tecnologias combinadas para atenuar o aspecto de casca de laranja da celulite.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Tratamento para Celulite', '60 min', 'Melhora do aspecto visual e do grau da celulite localizada.', 'Manter alimentação leve, hidratação ativa e hábitos saudáveis recomendados.', 'Plano de tratamento individualizado e progressivo.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20Tratamento%20para%20Celulite." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CAPILAR -->
+        <div class="category-block" data-block-category="capilar">
+            <h2 class="catalog-section-title">Tratamentos Capilares</h2>
+            <div class="catalog-grid">
+                
+                <!-- capilar 1 -->
+                <div class="service-card" data-category="capilar">
+                    <div class="card-image-left" style="background-image: url('../assets/capilar_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Capilar</span>
+                        <h3>Protocolo de Recuperação dos Fios</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 30 min</span>
+                        <p class="short-desc">Tratamento focado na reposição de nutrientes e reconstrução do fio capilar danificado ou fragilizado.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Protocolo de Recuperação dos Fios', '30 min', 'Fios de cabelo secos, danificados por química ou quebradiços.', 'Seguir as orientações de lavagem e produtos indicados para uso doméstico (home care).', 'Protocolo altamente personalizado conforme as carências de cada cabelo.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20Protocolo%20de%20Recupera%C3%A7%C3%A3o%20dos%20Fios." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- capilar 2 -->
+                <div class="service-card" data-category="capilar">
+                    <div class="card-image-left" style="background-image: url('../assets/capilar_treatment.jpg');"></div>
+                    <div class="card-main-content">
+                        <span class="card-category-tag">Capilar</span>
+                        <h3>Protocolo para Controle da Queda</h3>
+                        <span class="duration"><ion-icon name="time-outline"></ion-icon> Duração: 30 min</span>
+                        <p class="short-desc">Terapia capilar profunda que estimula a circulação e o fortalecimento do bulbo capilar, reduzindo a queda.</p>
+                        <div class="card-actions">
+                            <button class="btn-details-toggle" onclick="openDetailsModal('Protocolo para Controle da Queda', '30 min', 'Redução da queda capilar ativa e fortalecimento de novos fios.', 'Seguir a rotina de cuidados indicados para a saúde do couro cabeludo em casa.', 'Requer avaliação diagnóstica inicial para identificação das causas potenciais da queda.')">
+                                Ver Detalhes
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20Protocolo%20para%20Controle%20da%20Queda." target="_blank" class="btn-book">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- SERVICE DETAILS MODAL -->
+    <div class="modal-overlay" id="serviceModal" onclick="closeModalOnOutsideClick(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="Fechar Modal">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- INTERACTION SCRIPTS -->
+    <script>
+        function filterCatalog(category) {
+            // Update active state on filter buttons
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Set active button
+            const activeButton = Array.from(buttons).find(btn => {
+                return btn.getAttribute('onclick').includes(category);
+            });
+            if (activeButton) activeButton.classList.add('active');
+
+            // Hide/Show Blocks
+            const blocks = document.querySelectorAll('.category-block');
+            blocks.forEach(block => {
+                const blockCategory = block.getAttribute('data-block-category');
+                if (category === 'todos' || blockCategory === category) {
+                    block.style.display = 'block';
+                } else {
+                    block.style.display = 'none';
+                }
+            });
+
+            // Hide/Show Individual Cards
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'todos' || cardCategory === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openDetailsModal(name, duration, indication, postCare, notes) {
+            const modal = document.getElementById('serviceModal');
+            const body = document.getElementById('modalBody');
+            
+            body.innerHTML = `
+                <h2>${name}</h2>
+                <div class="modal-duration">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span>Duração: ${duration}</span>
+                </div>
+                
+                <div class="modal-detail-item">
+                    <strong>Indicação</strong>
+                    <p>${indication}</p>
+                </div>
+                
+                <div class="modal-detail-item">
+                    <strong>Cuidados Pós-Procedimento</strong>
+                    <p>${postCare}</p>
+                </div>
+                
+                <div class="modal-detail-item">
+                    <strong>Observação Importante</strong>
+                    <p>${notes}</p>
+                </div>
+                
+                <div class="modal-action-wrapper">
+                    <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20procedimento%20${encodeURIComponent(name)}." target="_blank" class="btn-book-modal">
+                        Solicitar Agendamento
+                        <ion-icon name="logo-whatsapp" style="font-size: 1.2rem;"></ion-icon>
+                    </a>
+                </div>
+            `;
+            
+            modal.classList.add('open');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('serviceModal');
+            modal.classList.remove('open');
+        }
+
+        function closeModalOnOutsideClick(event) {
+            const modal = document.getElementById('serviceModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

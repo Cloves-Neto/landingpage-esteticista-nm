@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayara Esteticista | Links</title>
+    <meta name="description"
+        content="Acesse nossos canais oficiais, conheça o catálogo de serviços e agende seu atendimento personalizado com Nayara Esteticista.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nayara Esteticista | Links">
+    <meta property="og:description" content="Central de links oficiais NM Dermocare.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Ionicons Icon Library -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        :root {
+            --bg-creme: #FAF6F0;
+            --bg-champagne: #F5EFE6;
+            --bg-dark: #231815;
+            --text-dark: #231815;
+            --text-muted: #5C4E48;
+            --accent-gold: #C5A376;
+            --accent-gold-hover: #B08D60;
+            --line-color: #E8DFD3;
+            --white: #FFFFFF;
+
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Montserrat', sans-serif;
+
+            --radius-lg: 32px;
+            --radius-md: 20px;
+            --radius-full: 9999px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            /* Overlay gradient to keep high text contrast, with assets/inbio.jpg as background */
+            background: linear-gradient(rgba(253, 251, 247, 0.94), rgba(253, 251, 247, 0.94)), url('../assets/inbio.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .bio-container {
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--line-color);
+            border-radius: var(--radius-lg);
+            padding: 48px 30px;
+            box-shadow: 0 15px 40px rgba(44, 29, 23, 0.05);
+        }
+
+        /* PROFILE HEADER */
+        .avatar-wrapper {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 8px 20px rgba(44, 29, 23, 0.06);
+        }
+
+        .logo-badge {
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            background-color: var(--text-dark);
+            color: var(--white);
+            font-family: var(--font-serif);
+            font-size: 0.75rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            border: 2px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio-info h1 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .bio-info .profession {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .bio-info .tagline {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 36px;
+        }
+
+        /* LINKS LIST */
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-btn {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--line-color);
+            background-color: var(--white);
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(44, 29, 23, 0.02);
+        }
+
+        .link-btn .btn-text-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-align: left;
+        }
+
+        .link-btn .btn-icon {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(197, 163, 118, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .link-btn .arrow-icon {
+            font-size: 0.8rem;
+            color: rgba(107, 90, 82, 0.4);
+            transition: var(--transition);
+        }
+
+        .link-btn:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 29, 23, 0.05);
+        }
+
+        .link-btn:hover .arrow-icon {
+            color: var(--accent-gold);
+            transform: translateX(3px);
+        }
+
+        /* Destaque principal para WhatsApp */
+        .link-btn-featured {
+            background-color: var(--text-dark);
+            border-color: var(--text-dark);
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(44, 29, 23, 0.15);
+        }
+
+        .link-btn-featured .btn-icon {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+
+        .link-btn-featured .arrow-icon {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .link-btn-featured:hover {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 28px rgba(197, 163, 118, 0.25);
+        }
+
+        .link-btn-featured:hover .btn-icon {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .link-btn-featured:hover .arrow-icon {
+            color: var(--white);
+        }
+
+        /* BIO FOOTER */
+        .bio-footer {
+            margin-top: 40px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .bio-footer a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bio-container">
+        <!-- AVATAR HEADER -->
+        <div class="avatar-wrapper">
+            <img src="../assets/inbio.jpg" alt="Nayara Esteticista" class="avatar-img">
+            <div class="logo-badge">NM</div>
+        </div>
+
+        <div class="bio-info">
+            <h1>Nayara</h1>
+            <span class="profession">Esteticista</span>
+            <p class="tagline">NM Dermocare — Cuidado personalizado, tecnologia e bem-estar para valorizar sua beleza
+                natural.</p>
+        </div>
+
+        <!-- LINKS LIST -->
+        <div class="links-list">
+
+            <!-- Link 1: WhatsApp (Agendar) -->
+            <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Vim%20pelo%20Instagram%20e%20gostaria%20de%20agendar%20um%20procedimento."
+                target="_blank" class="link-btn link-btn-featured">
+                <div class="btn-text-wrapper">
+                    <span class="btn-icon">
+                        <ion-icon name="logo-whatsapp" style="font-size: 1.25rem;"></ion-icon>
+                    </span>
+                    <span>Agendar pelo WhatsApp</span>
+                </div>
+                <span class="arrow-icon">➔</span>
+            </a>
+
+            <!-- Link 2: Conhecer meu site -->
+            <a href="../index.html" class="link-btn">
+                <div class="btn-text-wrapper">
+                    <span class="btn-icon">
+                        <ion-icon name="globe-outline"
+                            style="font-size: 1.25rem; color: var(--accent-gold);"></ion-icon>
+                    </span>
+                    <span>Conhecer Meu Site</span>
+                </div>
+                <span class="arrow-icon">➔</span>
+            </a>
+
+            <!-- Link 3: Instagram -->
+            <a href="https://www.instagram.com/esteticista_nm" target="_blank" class="link-btn">
+                <div class="btn-text-wrapper">
+                    <span class="btn-icon">
+                        <ion-icon name="logo-instagram"
+                            style="font-size: 1.25rem; color: var(--accent-gold);"></ion-icon>
+                    </span>
+                    <span>Instagram Oficial</span>
+                </div>
+                <span class="arrow-icon">➔</span>
+            </a>
+
+            <!-- Link 4: Como Chegar (Google Maps) -->
+            <a href="https://maps.google.com/?q=Rua+23+de+Maio,+36,+Anchieta,+S%C3%A3o+Bernardo+do+Campo+-+SP"
+                target="_blank" class="link-btn">
+                <div class="btn-text-wrapper">
+                    <span class="btn-icon">
+                        <ion-icon name="location-outline"
+                            style="font-size: 1.25rem; color: var(--accent-gold);"></ion-icon>
+                    </span>
+                    <span>Como Chegar (Studio)</span>
+                </div>
+                <span class="arrow-icon">➔</span>
+            </a>
+
+        </div>
+
+        <!-- BIO FOOTER -->
+        <div class="bio-footer">
+            <p>NM Estética Avançada &copy; 2026</p>
+            <p style="margin-top: 6px; font-size: 0.65rem; color: rgba(107, 90, 82, 0.55);">Desenvolvido por <a
+                    href="https://devneto.com.br" target="_blank">Cloves Neto</a></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

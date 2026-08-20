@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayara Esteticista | NM Dermocare - Cuidado e Beleza</title>
+    <meta name="description" content="Estética facial e corporal de alta performance em São Bernardo do Campo. Conheça a NM Dermocare e agende seu momento de cuidado e rejuvenescimento.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nayara Esteticista | NM Dermocare">
+    <meta property="og:description" content="Espaço de estética premium com tratamentos personalizados em São Bernardo do Campo.">
+    <meta property="og:image" content="assets/nayara_atendimento.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ionicons Icon Library -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        :root {
+            --bg-creme: #FAF6F0; /* Warm nude beige from reference */
+            --bg-champagne: #F5EFE6; /* Muted contrast tone */
+            --bg-dark: #231815; /* Elegant near black-brown from reference */
+            --bg-card-dark: #2F211C;
+            --text-dark: #231815;
+            --text-muted: #5C4E48;
+            --text-light: #FBF9F6;
+            --accent-gold: #C5A376;
+            --accent-gold-hover: #B08D60;
+            --line-color: #E8DFD3;
+            --white: #FFFFFF;
+            
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Montserrat', sans-serif;
+            
+            --radius-xl: 48px; /* Large rounded corners from reference */
+            --radius-lg: 32px;
+            --radius-md: 20px;
+            --radius-full: 9999px;
+            --shadow-premium: 0 12px 40px rgba(35, 24, 21, 0.03);
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-creme);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 246, 240, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-nav {
+            background-color: var(--text-dark);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(35, 24, 21, 0.1);
+            text-decoration: none;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger button for mobile */
+        .hamburger-btn {
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+            transition: var(--transition);
+        }
+
+        .hamburger-btn:hover {
+            color: var(--accent-gold);
+        }
+
+        /* MOBILE SIDE PANEL MENU */
+        .mobile-side-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 340px;
+            height: 100vh;
+            background: rgba(250, 246, 240, 0.96);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: var(--transition);
+            padding: 40px 30px;
+            border-left: 1px solid var(--line-color);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -10px 0 40px rgba(35, 24, 21, 0.05);
+        }
+
+        .mobile-side-menu.open {
+            transform: translateX(0);
+        }
+
+        .side-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .close-menu-btn {
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-menu-btn:hover {
+            color: var(--accent-gold);
+        }
+
+        .side-menu-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .side-menu-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+        }
+
+        .side-menu-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 8px;
+        }
+
+        .side-menu-links ion-icon {
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+        }
+
+        .btn-side-nav {
+            margin-top: 30px;
+            background-color: var(--text-dark);
+            color: var(--white) !important;
+            padding: 16px;
+            border-radius: var(--radius-md);
+            justify-content: center;
+            font-size: 0.9rem !important;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            box-shadow: 0 10px 20px rgba(35, 24, 21, 0.1);
+            text-decoration: none;
+        }
+
+        .btn-side-nav:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        .mobile-side-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(35, 24, 21, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .mobile-side-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* HERO SECTION (Bento Curved Container Style) */
+        .hero-outer-container {
+            padding: 24px 24px 60px;
+            background-color: var(--bg-creme);
+        }
+
+        .hero {
+            position: relative;
+            max-width: 1300px;
+            margin: 0 auto;
+            min-height: 80vh;
+            border-radius: var(--radius-xl); /* Big curved corners from reference */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, rgba(35, 24, 21, 0.7), rgba(35, 24, 21, 0.85)), url('assets/nayara_atendimento.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 100px 40px;
+            box-shadow: 0 20px 50px rgba(35, 24, 21, 0.15);
+        }
+
+        .hero-container {
+            max-width: 900px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .hero-logo-large {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            color: var(--accent-gold);
+            font-weight: 300;
+            margin-bottom: 24px;
+            display: inline-block;
+            letter-spacing: 0.12em;
+            line-height: 1;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.4rem, 6vw, 4.4rem);
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--text-light);
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero h1 span {
+            font-style: italic;
+            color: var(--accent-gold);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(251, 249, 246, 0.8);
+            max-width: 620px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-white {
+            background-color: var(--white);
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary-white:hover {
+            background-color: var(--accent-gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(197, 163, 118, 0.3);
+        }
+
+        .btn-secondary-outline {
+            border: 1px solid rgba(251, 249, 246, 0.4);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary-outline:hover {
+            border-color: var(--white);
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* CONHEÇA NOSSO STUDIO */
+        .studio-section {
+            padding: 100px 24px;
+            background-color: var(--bg-champagne);
+            border-top: 1px solid var(--line-color);
+        }
+
+        .studio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .studio-text-content .studio-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .studio-text-content h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            color: var(--text-dark);
+            line-height: 1.15;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .studio-text-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .studio-quote {
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 20px;
+            font-style: italic;
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin: 32px 0;
+            line-height: 1.5;
+        }
+
+        .studio-video-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 9/16;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--line-color);
+            box-shadow: 0 20px 50px rgba(35, 24, 21, 0.08);
+            position: relative;
+            background-color: var(--bg-dark);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* SOBRE NAYARA */
+        .about-section {
+            padding: 100px 24px;
+            background-color: var(--bg-creme);
+            border-top: 1px solid var(--line-color);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-img-frame {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--line-color);
+            width: 100%;
+            max-width: 440px;
+            height: 520px;
+        }
+
+        .about-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -24px;
+            right: 20px;
+            background-color: var(--white);
+            border: 1px solid var(--line-color);
+            padding: 16px 24px;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 30px rgba(35, 24, 21, 0.08);
+            text-align: center;
+        }
+
+        .about-badge strong {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            display: block;
+        }
+
+        .about-badge span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .about-text h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .about-title-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            margin-bottom: 32px;
+            display: block;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+
+        .about-features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 36px;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .about-features li ion-icon {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        /* BENTO GRID SERVIÇOS EM DESTAQUE */
+        .featured-services {
+            padding: 100px 24px;
+            background-color: var(--bg-champagne);
+            border-top: 1px solid var(--line-color);
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .section-header .section-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            color: var(--text-dark);
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Asymmetric Bento Grid */
+        .bento-grid {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 300px;
+            gap: 24px;
+        }
+
+        .bento-card {
+            background-color: var(--white);
+            border: 1px solid var(--line-color);
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-premium);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .bento-card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            transition: var(--transition);
+        }
+
+        .bento-card:hover .bento-card-bg {
+            opacity: 0.25;
+            transform: scale(1.05);
+        }
+
+        .bento-content {
+            padding: 36px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+
+        .bento-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .bento-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .bento-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .bento-meta {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bento-meta ion-icon {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        .bento-actions {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 16px;
+            border-top: 1px solid var(--line-color);
+            padding-top: 20px;
+        }
+
+        .btn-bento-link {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-bento-link:hover {
+            color: var(--accent-gold);
+            transform: translateX(4px);
+        }
+
+        .btn-bento-action {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-bento-action:hover {
+            background-color: var(--accent-gold);
+        }
+
+        /* Bento grid configurations */
+        .bento-w2 {
+            grid-column: span 2;
+        }
+
+        .bento-h2 {
+            grid-row: span 2;
+        }
+
+        .bento-card .bento-benefits {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .bento-card .bento-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .bento-card .bento-benefits ion-icon {
+            color: var(--accent-gold);
+        }
+
+        /* TESTIMONIALS (Marquee) */
+        .testimonials-section {
+            padding: 100px 0;
+            background-color: var(--bg-creme);
+            border-top: 1px solid var(--line-color);
+            overflow: hidden;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        /* Fade overlay effects */
+        .marquee-container::before,
+        .marquee-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 10%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .marquee-container::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bg-creme), transparent);
+        }
+
+        .marquee-container::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bg-creme), transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            gap: 24px;
+            animation: marquee-scroll 32s linear infinite;
+        }
+
+        .marquee-card {
+            background-color: var(--white);
+            border: 1px solid var(--line-color);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            width: 340px;
+            box-shadow: var(--shadow-premium);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .marquee-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .marquee-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: auto;
+        }
+
+        .marquee-card .stars {
+            color: var(--accent-gold);
+            display: flex;
+            gap: 4px;
+            font-size: 0.95rem;
+        }
+
+        @keyframes marquee-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pause marquee on hover removed to prevent mobile scrolling interference */
+
+        /* FAQ (Accordion) SECTION */
+        .faq-section {
+            padding: 100px 24px;
+            background-color: var(--bg-champagne);
+            border-top: 1px solid var(--line-color);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--line-color);
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            transition: var(--transition);
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid var(--line-color);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 32px 10px;
+            background: none;
+            border: none;
+            font-family: var(--font-sans);
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-num {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            margin-right: 24px;
+            font-weight: 500;
+            min-width: 30px;
+        }
+
+        .faq-title {
+            flex-grow: 1;
+        }
+
+        .faq-question ion-icon {
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            flex-shrink: 0;
+        }
+
+        .faq-question.active ion-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .faq-answer p {
+            padding: 0 10px 32px 54px;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* PRE-SCHEDULING FORM */
+        .booking-section {
+            padding: 100px 24px;
+            background-color: var(--bg-creme);
+            border-top: 1px solid var(--line-color);
+        }
+
+        .booking-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .booking-info .booking-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .booking-info h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            color: var(--text-dark);
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.15;
+        }
+
+        .booking-info p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 32px;
+        }
+
+        .booking-rules {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background-color: var(--bg-champagne);
+            padding: 24px 30px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .booking-rules p {
+            margin-bottom: 0;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: var(--text-dark);
+        }
+
+        .booking-form-wrapper {
+            background-color: var(--white);
+            border: 1px solid var(--line-color);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .booking-form-wrapper form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 10px;
+            border: none;
+            border-bottom: 1px solid var(--line-color);
+            background-color: transparent;
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border-radius: 0;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: var(--accent-gold);
+            background-color: rgba(197, 163, 118, 0.02);
+        }
+
+        .select-input {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C5A376' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            cursor: pointer;
+        }
+
+        .textarea-input {
+            height: 100px;
+            resize: none;
+        }
+
+        .form-btn {
+            background-color: var(--text-dark);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: 18px 28px;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 6px 16px rgba(35, 24, 21, 0.15);
+        }
+
+        .form-btn:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(197, 163, 118, 0.25);
+        }
+
+        /* STICKY WHATSAPP BUTTON */
+        .whatsapp-sticky {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background-color: var(--accent-gold);
+            color: var(--white);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(197, 163, 118, 0.3);
+            transition: var(--transition);
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-sticky:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: var(--accent-gold-hover);
+        }
+
+        .whatsapp-sticky svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        @keyframes pulse-whatsapp {
+            0% {
+                box-shadow: 0 0 0 0 rgba(197, 163, 118, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(197, 163, 118, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(197, 163, 118, 0);
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 80px 24px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .container-footer {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .brand-sub {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .brand-desc {
+            color: rgba(251, 249, 246, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            max-width: 340px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            background-color: var(--accent-gold);
+            border-color: transparent;
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .footer-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-menu a {
+            color: rgba(251, 249, 246, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-menu a:hover {
+            color: var(--accent-gold);
+            padding-left: 4px;
+        }
+
+        .contact-info-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-info-list li {
+            color: rgba(251, 249, 246, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: rgba(251, 249, 246, 0.4);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom a.dev-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .footer-bottom a.dev-link span {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+
+        .footer-bottom a.dev-link:hover span {
+            color: var(--white);
+        }
+
+        /* RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS */
+        @media (max-width: 991px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger-btn {
+                display: block;
+            }
+
+            .hero-outer-container {
+                padding: 16px 16px 40px;
+            }
+
+            .hero {
+                padding: 80px 24px;
+                border-radius: var(--radius-lg);
+            }
+
+            .studio-container,
+            .about-container,
+            .booking-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .studio-video-wrapper,
+            .about-image {
+                order: -1;
+            }
+
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: auto;
+            }
+
+            .bento-w2 {
+                grid-column: span 2;
+            }
+
+            .footer-columns {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-outer-container {
+                padding: 10px 10px 30px;
+            }
+
+            .hero {
+                min-height: auto;
+                border-radius: var(--radius-md);
+            }
+
+            .studio-section, .about-section, .featured-services, .testimonials-section, .faq-section, .booking-section, footer {
+                padding: 60px 16px !important;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .bento-w2 {
+                grid-column: span 1;
+            }
+
+            .bento-content {
+                padding: 24px;
+            }
+
+            .about-img-frame {
+                height: 420px;
+            }
+
+            .booking-form-wrapper {
+                padding: 30px 20px;
+            }
+
+            /* Disable transforms on hover for mobile touch accessibility */
+            .bento-card:hover, .faq-item:hover, .social-btn:hover {
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-ctas {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .hero-ctas a {
+                width: 100%;
+                max-width: 320px;
+                justify-content: center;
+            }
+            
+            .mobile-side-menu {
+                width: 100vw;
+            }
+
+            .whatsapp-sticky {
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+            }
+            
+            .whatsapp-sticky svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY WHATSAPP BUTTON -->
+    <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas." class="whatsapp-sticky" target="_blank" title="Chamar no WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M12.012 2C6.48 2 2 6.48 2 12.012c0 1.764.468 3.42 1.284 4.896L2 22l5.244-1.38c1.416.768 3.012 1.2 4.768 1.2 5.532 0 10.012-4.48 10.012-10.012S17.544 2 12.012 2zm0 18.276c-1.572 0-3.084-.42-4.428-1.224l-.324-.192-3.288.864.888-3.204-.216-.348a8.217 8.217 0 0 1-1.26-4.356c0-4.548 3.708-8.256 8.256-8.256s8.256 3.708 8.256 8.256-3.708 8.256-8.256 8.256zm4.536-6.192c-.252-.12-1.476-.732-1.704-.816-.228-.084-.396-.12-.564.12-.168.252-.648.816-.792.984-.144.168-.288.192-.54.072-.252-.12-1.068-.396-2.028-1.26-.744-.66-1.248-1.476-1.392-1.728-.144-.252-.012-.384.108-.504.12-.108.252-.288.384-.432.12-.144.168-.24.252-.408.084-.168.048-.312-.024-.432-.072-.12-.564-1.356-.768-1.86-.204-.492-.408-.42-.564-.432-.144-.012-.312-.012-.48-.012-.168 0-.444.06-.672.312-.228.252-.876.852-.876 2.076s.888 2.4 1.02 2.58c.132.18 1.752 2.676 4.248 3.756.588.252 1.056.408 1.416.528.6.192 1.14.168 1.572.108.48-.072 1.476-.6 1.68-1.188.204-.588.204-1.092.144-1.188-.06-.12-.228-.18-.48-.3z"/>
+        </svg>
+    </a>
+
+    <!-- HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">NM</a>
+            <ul class="nav-menu">
+                <li><a href="#studio">O Studio</a></li>
+                <li><a href="#sobre">A Profissional</a></li>
+                <li><a href="#servicos">Especialidades</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#contato" class="btn-nav">Agendar</a>
+                <!-- Hamburger menu button -->
+                <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Abrir Menu">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE SIDE PANEL MENU -->
+    <div class="mobile-side-menu" id="mobileMenu">
+        <div class="side-menu-header">
+            <a href="#" class="logo">NM</a>
+            <button class="close-menu-btn" onclick="toggleMobileMenu()" aria-label="Fechar Menu">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+        </div>
+        <ul class="side-menu-links">
+            <li><a href="#studio" onclick="toggleMobileMenu()"><ion-icon name="business-outline"></ion-icon> O Studio</a></li>
+            <li><a href="#sobre" onclick="toggleMobileMenu()"><ion-icon name="person-outline"></ion-icon> A Profissional</a></li>
+            <li><a href="#servicos" onclick="toggleMobileMenu()"><ion-icon name="sparkles-outline"></ion-icon> Especialidades</a></li>
+            <li><a href="#depoimentos" onclick="toggleMobileMenu()"><ion-icon name="chatbubbles-outline"></ion-icon> Depoimentos</a></li>
+            <li><a href="#faq" onclick="toggleMobileMenu()"><ion-icon name="help-circle-outline"></ion-icon> FAQ</a></li>
+            <li><a href="#contato" onclick="toggleMobileMenu()" class="btn-side-nav">Agendar Consulta</a></li>
+        </ul>
+    </div>
+    <div class="mobile-side-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- HERO SECTION (Bento Curved Box) -->
+    <div class="hero-outer-container">
+        <section class="hero" id="hero">
+            <div class="hero-container">
+                <span class="hero-logo-large">NM</span>
+                <h1>Cuidado personalizado que realça a sua <span>beleza natural</span></h1>
+                <p class="hero-desc">Espaço de estética integrativa e de alta performance. Protocolos científicos exclusivos e atenção a cada detalhe para valorizar o seu bem-estar de forma única.</p>
+                <div class="hero-ctas">
+                    <a href="./catalogo/index.html" class="btn-primary-white">
+                        Conhecer Serviços
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </a>
+                    <a href="#contato" class="btn-secondary-outline">
+                        Solicitar Atendimento
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONHEÇA NOSSO STUDIO (Autoplay optimized video) -->
+    <section class="studio-section" id="studio">
+        <div class="studio-container">
+            <div class="studio-text-content">
+                <span class="studio-tag">Atmosfera</span>
+                <h2>Conheça Nosso Studio</h2>
+                <p>O Studio NM Dermocare foi concebido sob o conceito de bem-estar integral e sofisticação. Cada detalhe do nosso ambiente, desde a iluminação suave até a climatização, foi cuidadosamente planejado para acolher você e proporcionar um verdadeiro refúgio de relaxamento.</p>
+                <div class="studio-quote">
+                    "Acreditamos que a estética vai muito além da aparência. Trata-se de acolhimento, autocuidado e o resgate da sua autoestima em um ambiente seguro e aconchegante."
+                </div>
+                <p>Aqui, você encontrará alta tecnologia associada a protocolos manuais delicados e personalizados. Permita-se desconectar da rotina agitada e desfrute de uma experiência completa de cuidado e exclusividade.</p>
+            </div>
+            
+            <div class="studio-video-wrapper">
+                <div class="video-container">
+                    <video autoplay loop muted playsinline aria-label="Vídeo apresentando o ambiente sofisticado e acolhedor do Studio NM Dermocare">
+                        <source src="assets/studio_optimized.mp4" type="video/mp4">
+                        Seu navegador não suporta a exibição de vídeos.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A PROFISSIONAL -->
+    <section class="about-section" id="sobre">
+        <div class="about-container">
+            <div class="about-image">
+                <div class="about-img-frame">
+                    <img src="assets/nayara.jpg" alt="Nayara - Esteticista Profissional NM Dermocare">
+                </div>
+                <div class="about-badge">
+                    <strong>Nayara M.</strong>
+                    <span>Esteticista Facial & Corporal</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="about-title-tag">Especialista</span>
+                <h2>Sua beleza em mãos experientes</h2>
+                <p>Olá, sou a Nayara. Minha missão como esteticista é desenvolver protocolos sob medida que respeitam a fisiologia individual de cada cliente. Compreendo que cada pele tem uma história, e é por isso que não utilizo fórmulas prontas.</p>
+                <p>Com formação sólida na área estética e atualizações frequentes nas últimas tendências de rejuvenescimento e cuidados capilares, uno tecnologia científica de ponta a toques manuais refinados, proporcionando resultados duradouros que promovem a saúde de dentro para fora.</p>
+                <p>No Studio NM Dermocare, cada consulta inicia-se com uma avaliação diagnóstica profunda para alinhar expectativas e desenhar a jornada ideal de autocuidado para a sua rotina.</p>
+                
+                <ul class="about-features">
+                    <li><ion-icon name="shield-checkmark-outline"></ion-icon> Avaliação Diagnóstica Individual</li>
+                    <li><ion-icon name="hardware-chip-outline"></ion-icon> Equipamentos Registrados Anvisa</li>
+                    <li><ion-icon name="leaf-outline"></ion-icon> Cosméticos de Grifes Renomadas</li>
+                    <li><ion-icon name="heart-outline"></ion-icon> Acompanhamento Pós-Procedimento</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS EM DESTAQUE (Bento Grid) -->
+    <section class="featured-services" id="servicos">
+        <div class="section-header">
+            <span class="section-tag">Tratamentos</span>
+            <h2>Especialidades em Destaque</h2>
+            <p>Conheça uma seleção dos nossos tratamentos faciais e corporais mais procurados para renovar sua pele.</p>
+        </div>
+        
+        <div class="bento-grid">
+            
+            <!-- Card 1: Horizontal Grande (span 2 cols) -->
+            <div class="bento-card bento-w2">
+                <div class="bento-card-bg" style="background-image: url('assets/nayara.jpg');"></div>
+                <div class="bento-content">
+                    <span class="bento-badge">Facial</span>
+                    <h3>Limpeza de Pele com Peeling de Diamante</h3>
+                    <p>Procedimento físico de dermoabrasão para remoção de células mortas, desobstrução profunda dos poros e melhora das rugas finas.</p>
+                    <div class="bento-meta">
+                        <ion-icon name="time-outline"></ion-icon> <span>Duração: 60 min</span>
+                    </div>
+                    <div class="bento-actions">
+                        <a href="./catalogo/index.html" class="btn-bento-link">Detalhes do Tratamento <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                        <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20a%20Limpeza%20de%20Pele%20com%20Peeling%20de%20Diamante." target="_blank" class="btn-bento-action">Agendar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2: Vertical Grande (span 2 rows) -->
+            <div class="bento-card bento-h2">
+                <div class="bento-content">
+                    <span class="bento-badge">Facial</span>
+                    <h3>Dermaplaning Premium</h3>
+                    <p>Esfoliação mecânica com lâmina dermatológica. Remove a lanugem (pelos finos) e as células queratinizadas, deixando o rosto sedoso e iluminado.</p>
+                    
+                    <ul class="bento-benefits">
+                        <li><ion-icon name="checkmark-circle-outline"></ion-icon> Textura macia e suave</li>
+                        <li><ion-icon name="checkmark-circle-outline"></ion-icon> Uniformiza a tonalidade</li>
+                        <li><ion-icon name="checkmark-circle-outline"></ion-icon> Melhora a absorção de ativos</li>
+                        <li><ion-icon name="checkmark-circle-outline"></ion-icon> Remove penugem facial</li>
+                    </ul>
+
+                    <div class="bento-meta" style="margin-top: auto;">
+                        <ion-icon name="time-outline"></ion-icon> <span>Duração: 60 min</span>
+                    </div>
+                    <div class="bento-actions" style="margin-top: 20px;">
+                        <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20Dermaplaning." target="_blank" class="btn-bento-action" style="width: 100%; justify-content: center;">Solicitar Vaga</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3: Quadrado Standard -->
+            <div class="bento-card">
+                <div class="bento-content">
+                    <span class="bento-badge">Labial</span>
+                    <h3>Hydragloss</h3>
+                    <p>Hidratação profunda associada a microagulhamento suave. Trata o ressecamento e rejuvenesce os lábios.</p>
+                    <div class="bento-meta">
+                        <ion-icon name="time-outline"></ion-icon> <span>Duração: 60 min</span>
+                    </div>
+                    <div class="bento-actions">
+                        <a href="https://wa.me/5511977398206?text=Ol%C3%A1%20Nayara!%20Gostaria%20de%20agendar%20o%20Hydragloss." target="_blank" class="btn-bento-action" style="width: 100%; justify-content: center;">Agendar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4: Quadrado Standard -->
+            <div class="bento-card">
+                <div class="bento-content">
+                    <span class="bento-badge">Injetáveis</span>
+                    <h3>Toxina Botulínica (Botox)</h3>
+                    <p>Suavização elegante e preventiva das rugas e linhas de expressão dinâmicas da testa e olhos.</p>
+                    <div class="bento-meta">
+                        <ion-icon name="time-outline"></ion-icon> <span>Duração: 60 min</span>
+                    </div>
+                    <div class="bento-actions">
+                        <a href="./catalogo/index.html" class="btn-bento-link">Catálogo <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Bottom CTA link removed from featured section to emphasize Bento card individual actions -->
+    </section>
+
+    <!-- TESTIMONIALS (Infinite CSS Marquee) -->
+    <section class="testimonials-section" id="depoimentos">
+        <div class="section-header">
+            <span class="section-tag">Depoimentos</span>
+            <h2>O que dizem nossas clientes</h2>
+            <p>O carinho e a transformação relatados por quem vivencia a experiência NM Dermocare.</p>
+        </div>
+        
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- Group 1 -->
+                <div class="marquee-card">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>"A limpeza de pele com peeling de diamante mudou totalmente a minha pele. Menos oleosidade, poros fechados e um viço maravilhoso. O atendimento da Nayara é nota mil."</p>
+                    <h4>Mariana Costa</h4>
+                </div>
+                <div class="marquee-card">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>"Fiz o Dermaplaning e fiquei chocada com o resultado! A maquiagem agora desliza perfeitamente e a pele ficou super macia. O espaço transmite uma paz sem igual."</p>
+                    <h4>Camila Rocha</h4>
+                </div>
+                <div class="marquee-card">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>"O Hydragloss salvou meus lábios do ressecamento crônico do inverno. Ficaram super hidratados, macios e com um volume natural lindo. Recomendo muito!"</p>
+                    <h4>Juliana Mendes</h4>
+                </div>
+                <div class="marquee-card">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>"O melhor atendimento de SBC. A Nayara é super dedicada, avalia a pele detalhadamente e monta um protocolo exclusivo. Não troco por nada!"</p>
+                    <h4>Beatriz Almeida</h4>
+                </div>
+
+                <!-- Duplicate Group 1 for loop -->
+                <div class="marquee-card">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>"A limpeza de pele com peeling de diamante mudou totalmente a minha pele. Menos oleosidade, poros fechados e um viço maravilhoso. O atendimento da Nayara é nota mil."</p>
+                    <h4>Mariana Costa</h4>
+                </div>
+                <div class="marquee-card">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>"Fiz o Dermaplaning e fiquei chocada com o resultado! A maquiagem agora desliza perfeitamente e a pele ficou super macia. O espaço transmite uma paz sem igual."</p>
+                    <h4>Camila Rocha</h4>
+                </div>
+                <div class="marquee-card">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>"O Hydragloss salvou meus lábios do ressecamento crônico do inverno. Ficaram super hidratados, macios e com um volume natural lindo. Recomendo muito!"</p>
+                    <h4>Juliana Mendes</h4>
+                </div>
+                <div class="marquee-card">
+                    <div class="stars">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>"O melhor atendimento de SBC. A Nayara é super dedicada, avalia a pele detalhadamente e monta um protocolo exclusivo. Não troco por nada!"</p>
+                    <h4>Beatriz Almeida</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION (Accordion) -->
+    <section class="faq-section" id="faq">
+        <div class="section-header">
+            <span class="section-tag">Dúvidas</span>
+            <h2>Perguntas Frequentes</h2>
+            <p>Esclareça suas principais dúvidas sobre nossos procedimentos e agendamentos.</p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span class="faq-num">01</span>
+                    <span class="faq-title">Como funcionam os agendamentos?</span>
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <div class="faq-answer">
+                    <p>Todos os agendamentos são realizados previamente e necessitam do pagamento de um sinal de garantia para confirmação e reserva da sua vaga na agenda da profissional.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span class="faq-num">02</span>
+                    <span class="faq-title">Quais os cuidados pós-limpeza de pele e peeling?</span>
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <div class="faq-answer">
+                    <p>É fundamental evitar a exposição solar direta nas primeiras 24h a 48h, utilizar protetor solar fator 50+ constantemente e manter a pele intensamente hidratada com os cremes regenerativos recomendados.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span class="faq-num">03</span>
+                    <span class="faq-title">Gestantes e lactantes podem fazer tratamentos?</span>
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <div class="faq-answer">
+                    <p>Alguns ácidos e aparelhos são contraindicados nessa fase. Por isso, é obrigatório relatar a gravidez ou período de amamentação no formulário de pré-agendamento para adaptarmos o protocolo de forma segura.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span class="faq-num">04</span>
+                    <span class="faq-title">Qual o prazo para cancelamento ou remarcação?</span>
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <div class="faq-answer">
+                    <p>Pedimos a gentileza de comunicar cancelamentos ou necessidade de remarcação de horários com no mínimo 24 horas de antecedência para liberação da agenda.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span class="faq-num">05</span>
+                    <span class="faq-title">Todos os procedimentos requerem avaliação prévia?</span>
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <div class="faq-answer">
+                    <p>Tratamentos injetáveis (como Toxina Botulínica e Bioestimuladores) e tecnologias de plasma requerem uma avaliação clínica prévia para mapear corretamente o protocolo ideal de aplicação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRE-SCHEDULING FORM -->
+    <section class="booking-section" id="contato">
+        <div class="booking-container">
+            <div class="booking-info">
+                <span class="booking-tag">Agendamento</span>
+                <h2>Inicie seu Atendimento</h2>
+                <p>Preencha as informações ao lado para agilizarmos sua solicitação. Ao clicar no botão, os dados serão formatados em uma mensagem para envio direto pelo WhatsApp da profissional.</p>
+                
+                <div class="booking-rules">
+                    <p><ion-icon name="alert-circle-outline" style="color: var(--accent-gold); vertical-align: middle; margin-right: 8px; font-size: 1.15rem;"></ion-icon> <strong>Aviso Importante:</strong> Todos os agendamentos necessitam de sinal para confirmação prévia.</p>
+                    <p><ion-icon name="heart-outline" style="color: var(--accent-gold); vertical-align: middle; margin-right: 8px; font-size: 1.15rem;"></ion-icon> Gestantes e lactantes devem obrigatoriamente informar sua condição no campo de restrições de saúde.</p>
+                </div>
+            </div>
+            
+            <div class="booking-form-wrapper">
+                <form id="pre-booking-form" onsubmit="sendPreBooking(event)">
+                    <div class="form-group">
+                        <input type="text" id="bk-name" placeholder="Seu Nome Completo" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <select id="bk-procedure" required class="form-input select-input">
+                            <option value="" disabled selected>Escolha o Procedimento</option>
+                            <optgroup label="Faciais">
+                                <option value="Limpeza de Pele Convencional">Limpeza de Pele Convencional</option>
+                                <option value="Limpeza de Pele com Peeling Químico">Limpeza de Pele com Peeling Químico</option>
+                                <option value="Limpeza de Pele com Peeling de Diamante">Limpeza de Pele com Peeling de Diamante</option>
+                                <option value="Dermaplaning">Dermaplaning</option>
+                                <option value="Hydragloss">Hydragloss</option>
+                                <option value="Jato de Plasma">Jato de Plasma</option>
+                                <option value="Remoção de Acrocórdons/Verrugas">Remoção de Acrocórdons/Verrugas</option>
+                                <option value="Microagulhamento Facial">Microagulhamento Facial</option>
+                                <option value="Toxina Botulínica (Botox)">Toxina Botulínica (Botox)</option>
+                                <option value="Bioestimulador de Colágeno">Bioestimulador de Colágeno</option>
+                                <option value="Radiofrequência Facial">Radiofrequência Facial</option>
+                            </optgroup>
+                            <optgroup label="Corporais">
+                                <option value="Protocolo Regenera (Estrias)">Protocolo Regenera (Estrias)</option>
+                                <option value="Drenagem Linfática">Drenagem Linfática</option>
+                                <option value="Drenagem Pós-Operatória">Drenagem Pós-Operatória</option>
+                                <option value="Drenagem Método Detox">Drenagem Método Detox</option>
+                                <option value="Tratamento para Lipedema">Tratamento para Lipedema</option>
+                                <option value="Tratamento para Flacidez">Tratamento para Flacidez</option>
+                                <option value="Tratamento para Celulite">Tratamento para Celulite</option>
+                            </optgroup>
+                            <optgroup label="Capilar">
+                                <option value="Protocolo de Recuperação dos Fios">Protocolo de Recuperação dos Fios</option>
+                                <option value="Protocolo para Controle da Queda">Protocolo para Controle da Queda</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="bk-health" placeholder="Alergias, uso de medicamentos, gestação ou observações relevantes" class="form-input textarea-input"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-btn">
+                        Agendar
+                        <ion-icon name="logo-whatsapp" style="font-size: 1.3rem;"></ion-icon>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-footer">
+            <div class="footer-columns">
+                <div class="footer-brand">
+                    <h3>NM</h3>
+                    <p class="brand-sub">Estética Avançada</p>
+                    <p class="brand-desc">Cuidado personalizado, tecnologia e bem-estar para valorizar sua beleza natural de forma científica e regenerativa.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/esteticista_nm" target="_blank" class="social-btn" aria-label="Seguir no Instagram">
+                            <ion-icon name="logo-instagram" style="font-size: 1.2rem;"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul class="footer-menu">
+                        <li><a href="#studio">O Studio</a></li>
+                        <li><a href="#sobre">A Profissional</a></li>
+                        <li><a href="#servicos">Especialidades</a></li>
+                        <li><a href="./catalogo/index.html">Catálogo Completo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Informações</h4>
+                    <ul class="contact-info-list">
+                        <li><ion-icon name="location-outline" style="color: var(--accent-gold); vertical-align: top; margin-right: 8px; margin-top: 4px;"></ion-icon> Rua 23 de Maio, n° 36, Anchieta<br>Ed. Lux — Sala 06<br>São Bernardo do Campo - SP</li>
+                        <li><ion-icon name="mail-outline" style="color: var(--accent-gold); vertical-align: middle; margin-right: 8px;"></ion-icon> esteticistanm_@htmail.com</li>
+                        <li><ion-icon name="call-outline" style="color: var(--accent-gold); vertical-align: middle; margin-right: 8px;"></ion-icon> (11) 97739-8206</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NM Estética Avançada. Todos os direitos reservados.</p>
+                <p class="attribution">Desenvolvido por <a href="https://devneto.com.br" target="_blank" class="dev-link">Cloves Neto</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            menu.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        function toggleFaq(button) {
+            button.classList.toggle('active');
+            const answer = button.nextElementSibling;
+            if (button.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                button.closest('.faq-item').style.borderColor = 'var(--accent-gold)';
+            } else {
+                answer.style.maxHeight = '0';
+                button.closest('.faq-item').style.borderColor = 'var(--line-color)';
+            }
+        }
+
+        function sendPreBooking(event) {
+            event.preventDefault();
+            const name = document.getElementById('bk-name').value;
+            const procedure = document.getElementById('bk-procedure').value;
+            const health = document.getElementById('bk-health').value || "Nenhuma";
+            
+            const messageText = `Olá Nayara! Gostaria de solicitar um agendamento:\n\n` + 
+                                `• Nome: ${name}\n` +
+                                `• Procedimento: ${procedure}\n` +
+                                `• Restrições/Saúde: ${health}\n\n` +
+                                `*Entendo que é necessário sinal para confirmação.*`;
+                                
+            const encodedText = encodeURIComponent(messageText);
+            window.open(`https://wa.me/5511977398206?text=${encodedText}`, '_blank');
+        }
+    </script>
+</body>
+</html>
